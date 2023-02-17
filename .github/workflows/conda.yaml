@@ -6,7 +6,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: get miniconda
-      run: wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    - name: change-own
-      run: chmod +x Miniconda3-latest-Linux-x86_64.sh
+        - uses: actions/checkout@v2
+        - name: Set up Python 3.8
+          uses: actions/setup-python@v2
+          with:
+            python-version: 3.8
+        - name: Install dependencies
+          run: |
+            # $CONDA is an environment variable pointing to the root of the miniconda directory
+            $CONDA/bin/conda env update --file environment.yml --name base
