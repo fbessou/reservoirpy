@@ -6,9 +6,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: publish-to-conda
-      uses: maxibor/conda-package-publish-action@v1.1
-      with:
-        subDir: 'conda'
-        AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
+    - name: get miniconda
+      run: wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    - name: change-own
+      run: chmod +x Miniconda3-latest-Linux-x86_64.sh
