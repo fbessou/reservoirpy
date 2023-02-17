@@ -51,6 +51,6 @@ jobs:
         source activate upload
         conda install -c conda-forge grayskull -y
         conda install -y anaconda-client conda-build
-        grayskull pypi --strict-conda-forge reservoirpy
+        grayskull pypi --strict-conda-forge reservoirpy-fbessou
         conda config --set anaconda_upload yes
-        conda-build reservoirpy --token "$ANACONDA_TOKEN" --user fbessou
+        conda-build reservoirpy-fbessou --token "$ANACONDA_TOKEN" --user fbessou
