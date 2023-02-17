@@ -1,6 +1,7 @@
 name: "Testing"
 
 on:
+  workflow_dispatch: {}
   push:
     branches: [master, v0.3.0-maintainance]
     paths-ignore:
@@ -21,6 +22,7 @@ on:
       - 'LICENSE'
       - 'CONTRIBUTING.md'
       - '.gitignore'
+
 
 jobs:
   build:
