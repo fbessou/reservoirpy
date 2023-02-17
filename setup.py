@@ -2,7 +2,7 @@ import os
 
 from setuptools import find_packages, setup
 
-NAME = "reservoirpy"
+NAME = "reservoirpy-fbessou"
 
 __version__ = ""
 version_file = os.path.join("reservoirpy", "_version.py")
