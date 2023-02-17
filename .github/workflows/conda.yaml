@@ -12,6 +12,8 @@ jobs:
         conda create -n upload -y python=3.8
         source activate upload
         conda install -c conda-forge grayskull -y
+        conda install -y anaconda-client conda-build
         grayskull pypi --strict-conda-forge reservoirpy
+        conda-build reservoirpy
 
 
