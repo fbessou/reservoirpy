@@ -15,7 +15,7 @@ jobs:
         conda install -y anaconda-client conda-build
         grayskull pypi --strict-conda-forge reservoirpy
         conda config --set anaconda_upload yes
-        conda-build reservoirpy --token fb-59247e4b-bd74-4d3f-b69c-8090f161b6ec --user fbessou
+        conda-build reservoirpy --token fb-7b0c021e-05f6-4487-aea0-b423ba3d7e41 --user fbessou
 
 
 
