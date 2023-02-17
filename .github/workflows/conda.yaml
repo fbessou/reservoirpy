@@ -14,8 +14,8 @@ jobs:
         conda install -c conda-forge grayskull -y
         conda install -y anaconda-client conda-build
         grayskull pypi --strict-conda-forge reservoirpy
-        conda-build reservoirpy
-        anaconda upload /usr/share/miniconda/envs/upload/conda-bld/noarch/reservoirpy-0.3.6-py_0.tar.bz2 -u fbessou -t fb-59247e4b-bd74-4d3f-b69c-8090f161b6ec
+        conda config --set anaconda_upload yes
+        conda-build reservoirpy --token fb-59247e4b-bd74-4d3f-b69c-8090f161b6ec --user fbessou
 
 
 
