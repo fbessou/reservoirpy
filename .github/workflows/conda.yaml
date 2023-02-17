@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: activate-conda
-      run: conda activate base
+      run: conda init
     - name: install-grayskull
-      run: $CONDA/bin/conda install -c conda-forge grayskull -y
+      run: conda install -c conda-forge grayskull -y
     - name: gen-recipe
       run: grayskull pypi --strict-conda-forge reservoirpy
 
