@@ -10,4 +10,6 @@ jobs:
       run: echo $CONDA
     - name: install-grayskull
       run: $CONDA install -c conda-forge grayskull
+    - name: gen-recipe
+      run: grayskull pypi --strict-conda-forge reservoirpy
 
