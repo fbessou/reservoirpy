@@ -6,7 +6,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: create-recipe
+    - name: build-conda-package
+      env: 
+        ANACONDA_TOKEN: ${{secrets.ANACONDA_TOKEN}}
       run: |
         export PATH=$CONDA/bin:$PATH
         conda create -n upload -y python=3.8
@@ -15,7 +17,7 @@ jobs:
         conda install -y anaconda-client conda-build
         grayskull pypi --strict-conda-forge reservoirpy
         conda config --set anaconda_upload yes
-        conda-build reservoirpy --token fb-7b0c021e-05f6-4487-aea0-b423ba3d7e41 --user fbessou
+        conda-build reservoirpy --token "$ANACONDA_TOKEN" --user fbessou
 
 
 
