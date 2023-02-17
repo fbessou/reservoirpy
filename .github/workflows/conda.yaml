@@ -6,9 +6,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: get miniconda
-      run: wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    - name: change-own
-      run: chmod +x Miniconda3-latest-Linux-x86_64.sh
     - name: show-miniconda
       run: echo $CONDA
+    - name: install-grayskull
+      run: $CONDA install -c conda-forge grayskull
+
