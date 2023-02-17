@@ -6,8 +6,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: show-miniconda
-      run: echo $CONDA
+    - name: activate-conda
+      run: conda activate base
     - name: install-grayskull
       run: $CONDA/bin/conda install -c conda-forge grayskull -y
     - name: gen-recipe
