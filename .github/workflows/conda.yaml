@@ -9,7 +9,7 @@ jobs:
     - name: show-miniconda
       run: echo $CONDA
     - name: install-grayskull
-      run: $CONDA/bin/conda install -c conda-forge grayskull
+      run: $CONDA/bin/conda install -c conda-forge grayskull -y
     - name: gen-recipe
       run: grayskull pypi --strict-conda-forge reservoirpy
 
