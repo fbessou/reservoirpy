@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: activate-conda
-      run: conda init
+      run: |
+      export PATH=$CONDA/bin:$PATH
+      conda create -n upload -y python=3.8
+      source activate upload
     - name: install-grayskull
       run: conda install -c conda-forge grayskull -y
     - name: gen-recipe
